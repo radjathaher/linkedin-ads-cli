@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "default_linkedin_version": "202601",
+  "default_base_url": "https://api.linkedin.com/rest",
+  "resources": [
+    {
+      "name": "ad-account",
+      "ops": [
+        { "name": "create", "method": "POST", "path": "/adAccounts", "params": [] },
+        { "name": "get", "method": "GET", "path": "/adAccounts/{id}", "params": [] },
+        { "name": "search", "method": "GET", "path": "/adAccounts", "query": { "q": "search" }, "params": [] },
+        {
+          "name": "partial-update",
+          "method": "POST",
+          "path": "/adAccounts/{id}",
+          "headers": { "X-RestLi-Method": "PARTIAL_UPDATE" },
+          "params": []
+        },
+        { "name": "delete", "method": "DELETE", "path": "/adAccounts/{id}", "params": [] },
+
+        { "name": "create-campaign-group", "method": "POST", "path": "/adAccounts/{id}/adCampaignGroups", "params": [] },
+        {
+          "name": "get-campaign-group",
+          "method": "GET",
+          "path": "/adAccounts/{id}/adCampaignGroups/{adCampaignGroupId}",
+          "params": [
+            { "name": "adCampaignGroupId", "flag": "campaign-group-id", "param_type": "string", "location": "path" }
+          ]
+        },
+        {
+          "name": "search-campaign-groups",
+          "method": "GET",
+          "path": "/adAccounts/{id}/adCampaignGroups",
+          "query": { "q": "search" },
+          "params": []
+        },
+        {
+          "name": "partial-update-campaign-group",
+          "method": "POST",
+          "path": "/adAccounts/{id}/adCampaignGroups/{adCampaignGroupId}",
+          "headers": { "X-RestLi-Method": "PARTIAL_UPDATE" },
+          "params": [
+            { "name": "adCampaignGroupId", "flag": "campaign-group-id", "param_type": "string", "location": "path" }
+          ]
+        },
+        {
+          "name": "delete-campaign-group",
+          "method": "DELETE",
+          "path": "/adAccounts/{id}/adCampaignGroups/{adCampaignGroupId}",
+          "params": [
+            { "name": "adCampaignGroupId", "flag": "campaign-group-id", "param_type": "string", "location": "path" }
+          ]
+        },
+
+        { "name": "create-campaign", "method": "POST", "path": "/adAccounts/{id}/adCampaigns", "params": [] },
+        {
+          "name": "get-campaign",
+          "method": "GET",
+          "path": "/adAccounts/{id}/adCampaigns/{adCampaignId}",
+          "params": [
+            { "name": "adCampaignId", "flag": "campaign-id", "param_type": "string", "location": "path" }
+          ]
+        },
+        {
+          "name": "search-campaigns",
+          "method": "GET",
+          "path": "/adAccounts/{id}/adCampaigns",
+          "query": { "q": "search" },
+          "params": []
+        },
+        {
+          "name": "partial-update-campaign",
+          "method": "POST",
+          "path": "/adAccounts/{id}/adCampaigns/{adCampaignId}",
+          "headers": { "X-RestLi-Method": "PARTIAL_UPDATE" },
+          "params": [
+            { "name": "adCampaignId", "flag": "campaign-id", "param_type": "string", "location": "path" }
+          ]
+        },
+        {
+          "name": "delete-campaign",
+          "method": "DELETE",
+          "path": "/adAccounts/{id}/adCampaigns/{adCampaignId}",
+          "params": [
+            { "name": "adCampaignId", "flag": "campaign-id", "param_type": "string", "location": "path" }
+          ]
+        },
+
+        { "name": "search-creatives", "method": "GET", "path": "/adAccounts/{id}/adCreatives", "query": { "q": "search" }, "params": [] }
+      ]
+    },
+    {
+      "name": "ad-analytics",
+      "ops": [
+        { "name": "analytics", "method": "GET", "path": "/adAnalytics", "query": { "q": "analytics" }, "params": [] },
+        { "name": "statistics", "method": "GET", "path": "/adAnalytics", "query": { "q": "statistics" }, "params": [] },
+        {
+          "name": "attributed-revenue-metrics",
+          "method": "GET",
+          "path": "/adAnalytics",
+          "query": { "q": "attributedRevenueMetrics" },
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "asset",
+      "ops": [
+        { "name": "get", "method": "GET", "path": "/assets/{id}", "params": [] },
+        { "name": "register-upload", "method": "POST", "path": "/assets", "query": { "action": "registerUpload" }, "params": [] },
+        {
+          "name": "complete-multipart-upload",
+          "method": "POST",
+          "path": "/assets",
+          "query": { "action": "completeMultiPartUpload" },
+          "params": []
+        }
+      ]
+    }
+  ]
+}
+
